@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: balaguru20/backend:{{ .Values.deployment.version }}
+        image: balaguru20/backend:{{- if .Values.deployment.version }}
         envFrom:
         - configMapRef:
             name: backend
